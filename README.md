@@ -1,66 +1,68 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+## API Operand
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Introdução
 
-## About Laravel
+Esse projeto se destina à Operand para composição de rotas para o CRUD de usuários encontrado em: https://github.com/RaphaelNunes10/frontend-test, bem como um repositório de facil acesso para aprender sobre o básico de Laravel.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+O projeto foi criado utilizando Visual Studio como IDE com Laravel para a criação de uma API onde é possível efetuar um CRUD e outras _queries_ simples em uma base de dados PostgreSQL.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Requerimentos
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-   [VSCode IDE](https://code.visualstudio.com/Download)
+-   [GIT](https://git-scm.com/downloads)
+-   [Composer](https://getcomposer.org/download/)
+-   [PHP](https://www.php.net/downloads.php) OU [Wamp](https://www.wampserver.com/en/) e similares.
 
-## Learning Laravel
+## Instalação
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+-   Baixe e instale as ferramentas requeridas;
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+-   Tenha certeza que estas _Dynamic Extensions_ NÃO estão comentadas no arquivo de configuração php.ini (encontrado na pasta onde você instalou o PHP):
 
-## Laravel Sponsors
+> -   extension=curl
+> -   extension=fileinfo
+> -   extension=mbstring
+> -   extension=openssl
+> -   extension=pdo_pgsql
+> -   extension=pgsql
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+-   No VSCode, abra uma nova pasta/crie um novo projeto;
+-   Abra o terminal (Terminal -> Novo Terminal);
+-   Inicialize a pasta como um novo repositório:
 
-### Premium Partners
+> git init
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-- **[Romega Software](https://romegasoftware.com)**
+-   Adcione este repositório:
 
-## Contributing
+> git remote add origin https://github.com/RaphaelNunes10/operand-test-api
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+-   Puxe o último _commit_:
 
-## Code of Conduct
+> git pull origin master
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+-   Instale o Laravel:
 
-## Security Vulnerabilities
+> composer global require laravel/installer
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Configure o arquivo .env (renomeie o arquivo .env.example se não houver este arquivo) desta forma:
 
-## License
+> -   DB_CONNECTION=pgsql
+> -   DB_HOST=127.0.0.1
+> -   DB_PORT=5432
+> -   DB_DATABASE= -nome-do-seu-banco-de-dados-
+> -   DB_USERNAME= -nome-de-usuário-do-seu-banco-de-dados-
+> -   DB_PASSWORD= -senha-do-seu-banco-de-dados-
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+-   Instale os pacotes do projeto:
+
+> composer update
+
+-   Execute as migrations para gerar as tabelas padrões do Laravel:
+
+> php artisan migrate
+
+-   Rode o projeto:
+
+> php artisan serve
+
+-   O projeto abrirá por padrão em http://127.0.0.1:8000, você pode digitar os _endpoints_ na URL para visualizar métodos GET.
